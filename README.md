@@ -16,6 +16,13 @@ Configure the production database in Rails (`config/database.yml`) such that the
 
 ##RUBY version
 change in Docker file
+##ENV
+    change db-name,db-password in .env file
+    SECRET_KEY_BASE=3eaf1ffa19d5bfd3ac139af1f4c4b9f3;
+    POSTGRES_DB=postgres
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=chiru
+    and SECRET_KEY_BASE
 ## Running your Rails application in Phusion Passenger
 docker-compose build
 docker-compose up
