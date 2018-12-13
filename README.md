@@ -15,7 +15,7 @@ Configure the production database in Rails (`config/database.yml`) such that the
         password: <%= ENV['APP_DB_PASSWORD'] %> 
 
 ##RUBY version
-change in Docker file
+change in Dockerfile and startup.sh
 ##ENV
     change db-name,db-password in .env file
     SECRET_KEY_BASE=3eaf1ffa19d5bfd3ac139af1f4c4b9f3;
