@@ -40,3 +40,4 @@ change in Dockerfile and startup.sh
 ## Start up scripts
 
 	Custom start up scripts can be added to `/ect/my_init.d` and will be executed during container start up.
+## Place your rails app in fun folder
