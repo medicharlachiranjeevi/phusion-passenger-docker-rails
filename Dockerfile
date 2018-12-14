@@ -32,11 +32,12 @@ WORKDIR /home/app/webapp
 RUN mkdir -p /etc/my_init.d
 ADD startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/*.sh
-
+RUN apt-get install git
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-COPY ./fun /home/app/webapp
+RUN git clone https://github.com/codefresh-contrib/ruby-on-rails-sample-app.git .
 #RUN bundle install
+COPY ./database.yml /home/app/webapp/config
 RUN chown -R app:app /home/app/webapp
 RUN sudo -u app bundle install --deployment --without development test
 RUN sudo -u app  RAILS_ENV=production bundle exec rake assets:precompile
