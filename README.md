@@ -1,9 +1,9 @@
 # Passenger-Rails docker
 Docker for hosting a Rails production app in Phusion Passenger running
-#IN THE rubyenv FILE
- 	give the ruby version 
-#IN script.sh 
-  give the github url
+# IN THE rubyenv FILE
+	give the ruby version
+# IN script.sh
+	give the github url
 
 ## Preparing the Rails application
 Configure the production database in Rails (`config/database.yml`) such that the values are filled by environment variables. These variables will be set on start up of the container. The adapter and port defaults to Postgres.
