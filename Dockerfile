@@ -6,14 +6,13 @@ FROM phusion/passenger-full
 ENV HOME /root
 ENV RAILS_ENV production
 RUN apt update
-RUN bash -lc 'rvm install "ruby-2.4.1"'
 RUN apt install -y sudo
 RUN apt-get install -y tzdata
-RUN bash -lc 'rvm --default use ruby-2.4.1'
 RUN sudo apt-get install -y build-essential libcurl4-openssl-dev
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
-
+COPY rubyenv /root/
+RUN bash /root/rubyenv
 # Start Nginx / Passenger
 RUN rm -f /etc/service/nginx/down
 # Remove the default site
@@ -35,10 +34,13 @@ RUN chmod +x /etc/my_init.d/*.sh
 RUN apt-get install git
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN git clone https://github.com/codefresh-contrib/ruby-on-rails-sample-app.git .
+RUN ls
+copy script.sh /home/app/
+RUN bash /home/app/script.sh
 #RUN bundle install
 COPY ./database.yml /home/app/webapp/config
 RUN chown -R app:app /home/app/webapp
+RUN ls /home/app/webapp/
 RUN sudo -u app bundle install --deployment --without development test
 RUN sudo -u app  RAILS_ENV=production bundle exec rake assets:precompile
 RUN gem install tzinfo-data

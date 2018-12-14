@@ -1,0 +1,4 @@
+bash -lc 'rvm install  ruby-2.0.0'
+bash -lc 'rvm --default use ruby-2.0.0'
+
+
