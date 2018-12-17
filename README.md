@@ -1,6 +1,6 @@
 # Passenger-Rails docker
-Docker for hosting a Rails production app in Phusion Passenger running
- git clone https://github.com/medicharlachiranjeevi/phusion-passenger-docker-rails.git
+ 	Docker for hosting a Rails production app in Phusion Passenger running
+ 	git clone https://github.com/medicharlachiranjeevi/phusion-passenger-docker-rails.git
 #prerequisites must install docker and docker-compose
 
 	for Docker https://docs.docker.com/v17.12/install/
