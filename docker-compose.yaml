@@ -1,7 +1,10 @@
 version: '3'
 services:
  web:
-   build: .
+   build: 
+    context: .
+    args:
+     RAILS_VER: ${RAILS_VER}
    ports:
      - "80:80"
    environment:
@@ -10,6 +13,8 @@ services:
       APP_DB_PASSWORD: ${POSTGRES_PASSWORD}
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       APP_DB_HOST: postgres
+   depends_on:
+    - postgres
  postgres:
     image: postgres:9.4
     environment:

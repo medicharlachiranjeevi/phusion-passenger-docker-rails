@@ -1,6 +1,5 @@
 # See https://intercityup.com/blog/how-i-build-a-docker-image-for-my-rails-app.html
 # See https://intercityup.com/blog/deploy-rails-app-including-database-configuration-env-vars-assets-using-docker.html
-
 FROM phusion/passenger-full
 # Set correct environment variables.
 ENV HOME /root
@@ -11,9 +10,10 @@ RUN apt-get install -y tzdata
 RUN sudo apt-get install -y build-essential libcurl4-openssl-dev
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
+# Start Nginx / Passenger
+ARG RAILS_VER
 COPY rubyenv /root/
 RUN bash /root/rubyenv
-# Start Nginx / Passenger
 RUN rm -f /etc/service/nginx/down
 # Remove the default site
 RUN rm /etc/nginx/sites-enabled/default
@@ -36,8 +36,10 @@ RUN apt-get install git
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN ls
 copy script.sh /home/app/
+WORKDIR /root
 RUN bash /home/app/script.sh
 #RUN bundle install
+WORKDIR /home/app/webapp/
 COPY ./database.yml /home/app/webapp/config
 RUN chown -R app:app /home/app/webapp
 RUN ls /home/app/webapp/

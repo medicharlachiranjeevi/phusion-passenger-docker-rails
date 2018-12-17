@@ -1,4 +1,3 @@
-bash -lc 'rvm install  ruby-2.0.0'
-bash -lc 'rvm --default use ruby-2.0.0'
-
-
+echo $RAILS_VER
+bash -lc "rvm install ruby-$RAILS_VER"
+bash -lc "rvm --default use ruby-$RAILS_VER"
