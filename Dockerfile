@@ -12,6 +12,7 @@ RUN sudo apt-get install -y build-essential libcurl4-openssl-dev
 CMD ["/sbin/my_init"]
 # Start Nginx / Passenger
 ARG RAILS_VER
+ARG GIT_URL
 COPY rubyenv /root/
 RUN bash /root/rubyenv
 RUN rm -f /etc/service/nginx/down

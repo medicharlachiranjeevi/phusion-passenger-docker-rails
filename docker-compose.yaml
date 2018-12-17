@@ -5,6 +5,7 @@ services:
     context: .
     args:
      RAILS_VER: ${RAILS_VER}
+     GIT_URL: ${GIT_URL}
    ports:
      - "80:80"
    environment:
