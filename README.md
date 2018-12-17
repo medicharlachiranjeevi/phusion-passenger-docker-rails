@@ -8,6 +8,7 @@ Docker for hosting a Rails production app in Phusion Passenger running
 	give the github url
 	git clone https://<user>:<password>@<gitserver>/<path>/<repo>.git
 ##ENV
+    
     RAILS_VER=2.0.0
 
     change db-name,db-password,SECRET_KEY in .env file
