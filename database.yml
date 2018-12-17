@@ -85,7 +85,6 @@ test:
 #
 production:
   <<: *default
-  host: postgres
   database: <%= ENV['APP_DB_DATABASE'] %>
   username: <%= ENV['APP_DB_USERNAME'] %>
   password: <%= ENV['APP_DB_PASSWORD'] %>

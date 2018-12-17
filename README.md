@@ -1,14 +1,14 @@
 # Passenger-Rails docker
 ## Docker for hosting a Rails production app in Phusion Passenger running
  	git clone https://github.com/medicharlachiranjeevi/phusion-passenger-docker-rails.git
-# prerequisites must install docker and docker-compose
-## for Docker https://docs.docker.com/v17.12/install/
-## for Docker-compose https://docs.docker.com/compose/install/#upgrading
+## prerequisites must install docker and docker-compose
+### for Docker https://docs.docker.com/v17.12/install/
+### for Docker-compose https://docs.docker.com/compose/install/#upgrading
 
-# ENV
+# ENV in .env
     GIT_URL=https://<user>:<password>@<gitserver>/<path>/<repo>.git
 
-    RAILS_VER=2.0.0
+    RUBY_VER=2.0.0
 
     change db-name,db-password,SECRET_KEY in .env file
 
@@ -28,6 +28,7 @@
 #On start up the following actions will be executed:
 
 	- database migrations
+        - databse seeds
 
 ## Start up scripts
 

@@ -4,7 +4,7 @@ services:
    build: 
     context: .
     args:
-     RAILS_VER: ${RAILS_VER}
+     RAILS_VER: ${RUBY_VER}
      GIT_URL: ${GIT_URL}
    ports:
      - "80:80"
