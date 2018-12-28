@@ -1,0 +1,30 @@
+version: '3'
+services:
+ web:
+   image: chiruuzumaki/railsdeveopment
+   ports:
+     - ${PORT}:80
+   volumes:
+      - .:/home/app/webapp/
+   environment:
+      APP_DB_DATABASE: ${POSTGRES_DB}
+      APP_DB_USERNAME: ${POSTGRES_USER}
+      APP_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      APP_DB_HOST: postgres
+   depends_on:
+    - postgres
+    - redis
+ redis:
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+ postgres:
+    image: postgres:9.4
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+     - ./tmp/db:/var/lib/postgresql/data
+
