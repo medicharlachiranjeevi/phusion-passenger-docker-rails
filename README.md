@@ -33,3 +33,8 @@
 ## Start up scripts
 
 	Custom start up scripts can be added to `/ect/my_init.d` and will be executed during container start up.
+## For development 
+  curl -o .env https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/.env
+  curl -o  script https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/script
+  curl -o devdocker-compose.yaml https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/devdocker-compose.yaml
+ run them in the code base
