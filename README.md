@@ -1,4 +1,5 @@
 # Passenger-Rails docker
+# For production
 ## Docker for hosting a Rails production app in Phusion Passenger running
  	git clone https://github.com/medicharlachiranjeevi/phusion-passenger-docker-rails.git
 ## prerequisites must install docker and docker-compose
@@ -24,7 +25,7 @@
 
 	docker-compose build
 
-  	docker-compose up
+  	docker-compose up -d
 #On start up the following actions will be executed:
 
 	- database migrations
@@ -33,12 +34,13 @@
 ## Start up scripts
 
 	Custom start up scripts can be added to `/ect/my_init.d` and will be executed during container start up.
-## For development 
+## For development of rails app in the rails app folder run commands
 
 	  curl -o .env https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/.env
 
 	  curl -o  script https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/script
 
 	  curl -o devdocker-compose.yaml https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/devdocker-compose.yaml
-#  Run them in the code base
-   bash script
+#  Run the command
+
+ 	bash script
