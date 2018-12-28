@@ -41,6 +41,19 @@
 	  curl -o  script https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/script
 
 	  curl -o devdocker-compose.yaml https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/devdocker-compose.yaml
+          
+          curl -o database.yml https://raw.githubusercontent.com/medicharlachiranjeevi/phusion-passenger-docker-rails/master/database.yml
+
 #  Run the command
 
  	bash script
+# For bunlde install
+
+	docker-compose exec web bunlde
+
+# For db:migrations 
+
+      docker-compose exec web rake db:migrate
+#For logs
+
+  	docker-compose logs web
