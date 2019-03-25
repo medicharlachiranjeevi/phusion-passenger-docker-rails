@@ -6,6 +6,8 @@ services:
     args:
      RAILS_VER: ${RUBY_VER}
      GIT_URL: ${GIT_URL}
+   image: porter/elasticsearch
+
    ports:
      - "80:80"
    environment:
