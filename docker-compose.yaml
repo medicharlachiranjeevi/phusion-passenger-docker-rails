@@ -14,7 +14,6 @@ services:
       APP_DB_PASSWORD: ${POSTGRES_PASSWORD}
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       APP_DB_HOST: postgres
-      ENV REDIS_URL: redis:6379
 
    depends_on:
     - postgres
@@ -26,6 +25,4 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
      - ./tmp/db:/var/lib/postgresql/data
- redis_db:
-  image: redis:3.2.8
 
