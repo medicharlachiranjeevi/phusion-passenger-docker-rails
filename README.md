@@ -5,7 +5,7 @@
 ## prerequisites must install docker and docker-compose
 ### for Docker https://docs.docker.com/v17.12/install/
 ### for Docker-compose https://docs.docker.com/compose/install/#upgrading
-
+ 
 
 # ENV in .env
     GIT_URL=https://<user>:<password>@<gitserver>/<path>/<repo>.git
